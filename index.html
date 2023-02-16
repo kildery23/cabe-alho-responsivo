@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade</title>
+
+    <style>
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         .cabecalho {
+            width: 100%;
+            background-color: rgb(247, 247, 204);
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 3px lightgray;
+            position: fixed;
+         }
+
+         .cabecalho img {
+            width: 120px;
+         }
+
+         .menu ul {
+            list-style: none;
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+
+         }
+
+         .menu a {
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: rgb(24, 24, 24);
+         }
+
+         /* layout tela celular ***********/
+
+
+         @media (max-width: 460px) {
+
+            .menu {
+                position: relative;
+            }
+
+            .menu:hover ul {
+                height: calc(100vh - 66px);
+            }
+
+            .menu:hover .linha1 {
+                transform: rotate(45deg) translate(0, 16px);
+            }
+
+            .menu:hover .linha2 {
+                opacity: 0;
+            }
+
+            .menu:hover .linha3 {
+                transform: rotate(-45deg) translate(0, -16px);
+            }
+
+            .menu ul {
+                display: block;
+                position: absolute;
+                top: 52px;
+                right: -30px;
+                width: 200px;
+                height: 0;
+                overflow: hidden;
+                background-color: rgb(247, 247, 204);
+                transition: 0.5s;
+            }
+
+           
+
+            .menu .linha1, .linha2, .linha3 {
+                background-color: rgb(24, 24, 24);
+                width: 30px;
+                height: 5px;
+                margin: 6px 0;
+                transform: 0.5s;
+           }
+
+           .menu a {
+               display: block; 
+               padding: 20px 40px;
+
+           }
+
+         }
+
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+            <img src="logo.png" alt="logomarca">
+        </div>
+
+        <nav class="menu">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+
+                <li>
+                    <a href="#">Serviços</a>
+                </li>
+
+                <li>
+                    <a href="#">Produtos</a>
+                </li>
+
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+    </header>
+
+   
+    
+</body>
+</html>
